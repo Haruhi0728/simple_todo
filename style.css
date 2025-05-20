@@ -66,6 +66,55 @@ h1 {
     display: flex;
     justify-content: space-between; /* テキストとボタンを両端に */
     align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+checkbox-rounf{
+    width: 1.5em;
+    height: 1.5em;
+    background-color: #ffffff;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 2px solid #566573;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+.checkbox-round:checked {
+    background-color: #85C1E9;
+    border-color: #85C1E9;
+}
+
+.checkbox-round:checked::after {
+    content: '\2713';
+    font-size: 1em;
+    color: white;
+    display: block;
+    text-align: center;
+    line-height: 1.5em; /* チェックボックスの高さと合わせる */
+}
+
+.task-text {
+    flex-grow: 1; /* タスクテキストが残りの利用可能なスペースを全て占めるようにする */
+    word-break: break-all;
+}
+
+.completed {
+    background-color: #e0ffe0;
+}
+
+.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.checkbox-round:focus {
+    box-shadow: 0 0 0 3px rgba(133, 193, 233, 0.5);
 }
 
 /* JavaScriptで動的にスタイルを変更するためのクラス (例) */
