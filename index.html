@@ -64,6 +64,32 @@
             taskTextSpan.textContent = text;
             taskTextSpan.classList.add('task-text');
 
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-button');
+            deleteButton.textContent = '削除';
+
+            listItem.appendChild(deleteButton);
+            listItem.appendChild(taskTextSpan);
+            listItem.appendChild(checkbox);
+             
+
+        //　チェックボックスがクリックされたときの処理
+        checkbox.addEventListener('change', function() {
+            listItem.classList.toggle('completed', this.checked);
+        });
+        
+        listItem.addEventListener('click', function(event) {
+        if (event.target !== checkbox && event.target !== deleteButton) {
+            checkbox.checked = !checkbox.checked;
+            checkbox.dispatchEvent(new Event('change'));
+        }
+    });
+
+    deleteButton.addEventListener('click', function() {
+        // listItemを削除
+        taskList.removeChild(listItem);
+    });
+
             listItem.appendChild(checkbox);
             listItem.appendChild(taskTextSpan);
 
@@ -83,6 +109,7 @@
             taskList.appendChild(listItem);
         }
 
+        
         // --- ここまでJavaScript ---
     </script>
 

@@ -64,13 +64,14 @@ h1 {
     margin-bottom: 8px;
     border-radius: 5px;
     display: flex;
-    justify-content: space-between; /* テキストとボタンを両端に */
+    flex-flow: row;
+    justify-content: space-between; 
     align-items: center;
     cursor: pointer;
     transition: all 0.3s ease;
 }
 
-checkbox-rounf{
+.checkbox-round{
     width: 1.5em;
     height: 1.5em;
     background-color: #ffffff;
@@ -81,7 +82,7 @@ checkbox-rounf{
     -webkit-appearance: none;
     outline: none;
     cursor: pointer;
-    margin-right: 10px;
+    margin-right: 15px;
     flex-shrink: 0;
 }
 
@@ -117,8 +118,24 @@ checkbox-rounf{
     box-shadow: 0 0 0 3px rgba(133, 193, 233, 0.5);
 }
 
-/* JavaScriptで動的にスタイルを変更するためのクラス (例) */
-.completed {
-    text-decoration: line-through; /* 取り消し線 */
-    color: #aaa;
+.delete-button {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+    flex-shrink: 0;
 }
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
+
+/* JavaScriptで動的にスタイルを変更するためのクラス (例) */
+/*.completed {
+    text-decoration: line-through;
+    color: #aaa;
+}*/
